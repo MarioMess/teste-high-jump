@@ -1,4 +1,4 @@
-import mysql, { Connection } from "mysql2/promise";
+import mongoose, { Connection } from "mongoose";
 
 export class ConfigDB {
    
@@ -11,11 +11,15 @@ export class ConfigDB {
    }
 
    private static async createConnection() {
-      this.connection = await mysql.createConnection({
-         host:'localhost',
-         user: 'root',
-         password:'',
-         database: 'dbfasicell'
-      });
+      try {
+         if (!this.connection) {
+           console.log('setting client');
+           await mongoose.connect('mongodb://localhost:27017/electronchallenge')
+           console.log(this.connection);      
+         }
+       } catch(error) {
+         console.log('error during connecting to mongo: ');
+         console.error(error);
+       }
    } 
 }

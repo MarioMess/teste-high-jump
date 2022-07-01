@@ -11,7 +11,7 @@
     "publish": "electron-forge publish",
     "lint": "eslint --ext .ts,.tsx ."
   },
-  "keywords": [], 
+  "keywords": [],
   "license": "MIT",
   "config": {
     "forge": {
@@ -72,7 +72,7 @@
     "@typescript-eslint/parser": "^5.0.0",
     "@vercel/webpack-asset-relocator-loader": "1.7.0",
     "css-loader": "^6.0.0",
-    "electron": "^17.0.0",
+    "electron": "^17.4.9",
     "eslint": "^8.0.1",
     "eslint-plugin-import": "^2.25.0",
     "fork-ts-checker-webpack-plugin": "^6.0.1",
@@ -83,8 +83,10 @@
     "typescript": "~4.5.4"
   },
   "dependencies": {
+    "@types/mongoose": "^5.11.97",
     "electron-squirrel-startup": "^1.0.0",
-    "mysql2": "^2.3.3",
+    "mongodb": "^4.7.0",
+    "mongoose": "^6.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }

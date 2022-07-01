@@ -1,6 +1,8 @@
 import { app, BrowserWindow, ipcMain } from "electron";
+import { useState } from "react";
 process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"] = "true";
 import { ConfigDB } from "./app/config/database";
+import { State } from "./app/views/home";
 
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
 
@@ -37,8 +39,8 @@ app.on("activate", () => {
   }
 });
 
-ipcMain.handle("GET_PRODUCTS", async () => {
-  const connection = await ConfigDB.dbConnection();
-  const [rows] = await connection.execute("SELECT * FROM products");
-  return rows;
+ipcMain.handle("GET_PRODUCTS", async (e) => {
+  const connection = await ConfigDB.dbConnection(); 
+  const tasks = await connection.asPromise();
+  e.returnValue("GET_PRODUCTS", JSON.stringify(tasks));  
 });
