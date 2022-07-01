@@ -1,4 +1,3 @@
-import { createWindow } from '../components/validWindow';
 import { useState } from 'react';
 import * as Componente from './App.styles';
 import { Item } from '../types/Item';
@@ -50,7 +49,4 @@ const App = () => {
     </Componente.Container>
 );
 }
-
-module.exports = createWindow;
-
 export default App;
