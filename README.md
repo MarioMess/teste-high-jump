@@ -6,7 +6,7 @@
 - `npm install --save-dev @types/mongoose @types/node`
 - `npm install electron --save -dev`
 - `npm install mongodb`
-- `npm start`
+- `npm start` ou `yarn start`
 
 <h4 align="left">Linguagens e ferramentas utilizadas</h4>
 
